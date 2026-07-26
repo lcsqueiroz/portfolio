@@ -2,10 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  max-width: 640px;
+  gap: 2.5rem;
+  max-width: 720px;
   margin: 2rem auto 0;
-  padding: 0.75rem 1.5rem;
+  padding: 1.35rem 2.25rem;
   border-radius: 999px;
   background: rgba(243, 236, 224, 0.08);
   border: 1px solid rgba(243, 236, 224, 0.18);
@@ -15,28 +15,22 @@
   z-index: 1000;
 }
 
-/* esquerda */
-.name {
-  font-weight: 600;
-  font-size: 1.15rem;
-  white-space: nowrap;
-}
-
 /* centro */
 .nav {
   display: flex;
-  gap: 1.75rem;
+  gap: 2.25rem;
 }
 
 /* direita */
 .social {
   display: flex;
-  gap: 1.25rem;
+  justify-self: end;
+  gap: 1.75rem;
 }
 
 .nav a,
 .social a {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-decoration: none;
