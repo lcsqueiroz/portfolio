@@ -1,10 +1,10 @@
 import style from './Hero.module.css';
 
-function Hero() {
+function Hero({ escondido }) {
   return (
     <>
       <div className={style.heroSpacer} aria-hidden="true" />
-      <section className={style.hero}>
+      <section className={`${style.hero} ${escondido ? style.escondido : ''}`}>
         <h1 className={style.name}>Lucas Queiroz</h1>
         <p className={style.role}>Desenvolvedor Front-end</p>
 

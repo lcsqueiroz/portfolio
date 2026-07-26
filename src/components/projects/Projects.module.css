@@ -1,0 +1,131 @@
+.projetos {
+  position: relative;
+  z-index: 2;
+  padding: 8rem 1.5rem;
+}
+
+.grid {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.titulo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-ink);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.projeto {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem 2rem;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(243, 236, 224, 0.15);
+}
+
+.projeto:first-of-type {
+  margin-top: 2.5rem;
+}
+
+.metricaBloco {
+  grid-column: 1 / span 4;
+}
+
+.metrica {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 0.95;
+  color: var(--color-gold);
+}
+
+.metricaLabel {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(243, 236, 224, 0.6);
+}
+
+.conteudo {
+  grid-column: 5 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tituloProjeto {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-ink);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.tech {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(243, 236, 224, 0.5);
+}
+
+.descricao {
+  max-width: 60ch;
+  color: rgba(243, 236, 224, 0.8);
+  line-height: 1.9;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 0.25rem;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(243, 236, 224, 0.55);
+}
+
+.link {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-gold);
+  padding-bottom: 2px;
+}
+
+.link:hover {
+  color: var(--color-gold);
+}
+
+.projeto:nth-of-type(even) .metricaBloco {
+  grid-column: 9 / -1;
+  text-align: right;
+}
+
+.projeto:nth-of-type(even) .conteudo {
+  grid-column: 1 / span 8;
+}
+
+@media (max-width: 720px) {
+  .metricaBloco,
+  .conteudo,
+  .projeto:nth-of-type(even) .metricaBloco,
+  .projeto:nth-of-type(even) .conteudo {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+}

@@ -3,7 +3,6 @@
   z-index: 2;
   min-height: 100vh;
   background: var(--color-gh-bg);
-  box-shadow: 0 -24px 60px rgba(1, 4, 9, 0.6);
 }
 
 .grid {
