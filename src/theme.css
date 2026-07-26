@@ -6,6 +6,11 @@
   --color-magenta: #c23f82;
   --color-gold: #e4c077;
 
+  --color-gh-bg: #0d1117;
+  --color-gh-text: #c9d1d9;
+  --color-gh-text-muted: #8b949e;
+  --color-gh-border: #30363d;
+
   --font-display: 'Poppins', sans-serif;
   --font-body: 'Roboto', sans-serif;
   --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
