@@ -3,6 +3,27 @@ import style from './About.module.css';
 
 const ANTECEDENCIA_EM_PIXELS = 150;
 
+const linhaDoTempo = [
+  {
+    periodo: '2023–2024',
+    cargo: 'Aprendiz de TI',
+    empresa: 'Gocil Tecnologia',
+    destaque: 'Liderou a implementação do sistema de chamados GLPI.',
+  },
+  {
+    periodo: '2024–2026',
+    cargo: 'Assistente de TI',
+    empresa: 'Gocil Tecnologia',
+    destaque: 'Sustentação do ERP Totvs RM e automação de processos internos.',
+  },
+  {
+    periodo: '2026–atual',
+    cargo: 'Estagiário Front-end',
+    empresa: 'Maví Click',
+    destaque: 'Desenvolve o front-end da Hub (hubgc.com.br) com React.js.',
+  },
+];
+
 function About({ aoMudarVisibilidade }) {
   const secaoRef = useRef(null);
 
@@ -67,6 +88,17 @@ function About({ aoMudarVisibilidade }) {
             React.js, Node.js, JavaScript, SQL
           </li>
         </ul>
+
+        <ol className={style.linhaDoTempo}>
+          {linhaDoTempo.map((passo) => (
+            <li key={passo.cargo} className={style.passo}>
+              <span className={style.passoPeriodo}>{passo.periodo}</span>
+              <strong className={style.passoCargo}>{passo.cargo}</strong>
+              <span className={style.passoEmpresa}>{passo.empresa}</span>
+              <p className={style.passoDestaque}>{passo.destaque}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

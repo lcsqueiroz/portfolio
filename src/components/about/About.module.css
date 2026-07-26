@@ -8,10 +8,10 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem 2rem;
+  gap: 1.25rem 2rem;
   max-width: 960px;
   margin: 0 auto;
-  padding: 6rem 1.5rem 5rem;
+  padding: 6rem 1.5rem 6rem;
 }
 
 .titulo {
@@ -19,7 +19,7 @@
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--color-gh-text);
+  color: var(--color-ink);
   text-transform: uppercase;
   letter-spacing: -0.02em;
 }
@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  color: var(--color-gh-text-muted);
+  color: rgba(243, 236, 224, 0.8);
   line-height: 1.9;
 }
 
@@ -49,7 +49,7 @@
   flex-direction: column;
   gap: 0.35rem;
   font-size: 0.9rem;
-  color: var(--color-gh-text);
+  color: var(--color-ink);
 }
 
 .meta span {
@@ -58,6 +58,49 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--color-gold);
+}
+
+.linhaDoTempo {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-gh-border);
+  list-style: none;
+}
+
+.passo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.passoPeriodo {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(243, 236, 224, 0.6);
+}
+
+.passoCargo {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--color-ink);
+}
+
+.passoEmpresa {
+  font-size: 0.75rem;
+  color: var(--color-gold);
+}
+
+.passoDestaque {
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: rgba(243, 236, 224, 0.6);
 }
 
 @media (max-width: 720px) {
@@ -71,5 +114,9 @@
     padding-left: 0;
     border-left: none;
     border-top: 1px solid var(--color-gh-border);
+  }
+
+  .linhaDoTempo {
+    grid-template-columns: 1fr;
   }
 }
