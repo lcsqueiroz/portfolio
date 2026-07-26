@@ -1,4 +1,6 @@
-function helloReact() {
-  return <h1>Hello React</h1>;
+import Header from './components/header/Header';
+
+function App() {
+  return <Header></Header>;
 }
-export default helloReact;
+export default App;

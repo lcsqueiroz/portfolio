@@ -1,0 +1,29 @@
+:root {
+  --color-ink: #f3ece0;
+  --color-void: #2c1559;
+  --color-indigo: #2c1d6c;
+  --color-violet: #5b3e96;
+  --color-magenta: #c23f82;
+  --color-gold: #e4c077;
+
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  background-color: var(--color-void);
+  background-image: url('./assets/background.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+}
+
+/* #root {
+  position: relative;
+  z-index: 1;
+} */
