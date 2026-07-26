@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import style from './Projects.module.css';
 
 const projetos = [
@@ -22,7 +23,7 @@ const projetos = [
     tags: ['Node.js', 'REST', 'Performance'],
   },
   {
-    metrica: 'Ao vivo',
+    metrica: 'Em produção',
     metricaLabel: 'hubgc.com.br',
     titulo: 'Rede Social para Profissionais de GC',
     tech: 'React.js',
@@ -34,35 +35,77 @@ const projetos = [
 ];
 
 function Projects() {
+  const [indiceAtual, setIndiceAtual] = useState(0);
+  const projeto = projetos[indiceAtual];
+
+  function irParaAnterior() {
+    setIndiceAtual((indiceAnterior) =>
+      indiceAnterior === 0 ? projetos.length - 1 : indiceAnterior - 1,
+    );
+  }
+
+  function irParaProximo() {
+    setIndiceAtual((indiceAnterior) =>
+      indiceAnterior === projetos.length - 1 ? 0 : indiceAnterior + 1,
+    );
+  }
+
   return (
     <section id="projetos" className={style.projetos}>
       <div className={style.grid}>
         <h2 className={style.titulo}>Projetos</h2>
 
-        {projetos.map((projeto) => (
-          <article key={projeto.titulo} className={style.projeto}>
+        <div className={style.carrossel}>
+          <button
+            type="button"
+            className={style.seta}
+            onClick={irParaAnterior}
+            aria-label="Projeto anterior"
+          >
+            ‹
+          </button>
+
+          <article key={indiceAtual} className={style.projeto}>
             <div className={style.metricaBloco}>
               <span className={style.metrica}>{projeto.metrica}</span>
               <span className={style.metricaLabel}>{projeto.metricaLabel}</span>
             </div>
 
-            <div className={style.conteudo}>
-              <h3 className={style.tituloProjeto}>{projeto.titulo}</h3>
-              <p className={style.tech}>{projeto.tech}</p>
-              <p className={style.descricao}>{projeto.descricao}</p>
+            <h3 className={style.tituloProjeto}>{projeto.titulo}</h3>
+            <p className={style.tech}>{projeto.tech}</p>
+            <p className={style.descricao}>{projeto.descricao}</p>
 
+            <div className={style.rodape}>
               <ul className={style.tags}>
                 {projeto.tags.map((tag) => (
                   <li key={tag}>{tag}</li>
                 ))}
               </ul>
 
-              <a className={style.link} href={projeto.link} target="_blank" rel="noreferrer">
+              <a
+                className={style.link}
+                href={projeto.link}
+                target="_blank"
+                rel="noreferrer"
+              >
                 Ver projeto →
               </a>
             </div>
           </article>
-        ))}
+
+          <button
+            type="button"
+            className={style.seta}
+            onClick={irParaProximo}
+            aria-label="Próximo projeto"
+          >
+            ›
+          </button>
+        </div>
+
+        <p className={style.contador}>
+          {indiceAtual + 1} / {projetos.length}
+        </p>
       </div>
     </section>
   );
