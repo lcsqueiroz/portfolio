@@ -1,7 +1,5 @@
-import { useEffect, useRef } from 'react';
+import useProximidadeDoTopo from '../../hooks/useProximidadeDoTopo';
 import style from './Contact.module.css';
-
-const ANTECEDENCIA_EM_PIXELS = 150;
 
 const contatos = [
   {
@@ -27,23 +25,7 @@ const contatos = [
 ];
 
 function Contact({ aoMudarVisibilidade, podeAparecer }) {
-  const espacadorRef = useRef(null);
-
-  useEffect(() => {
-    function verificarSeChegouNoTopo() {
-      const posicaoDoTopo = espacadorRef.current.getBoundingClientRect().top;
-
-      aoMudarVisibilidade(posicaoDoTopo <= ANTECEDENCIA_EM_PIXELS);
-    }
-
-    verificarSeChegouNoTopo();
-
-    window.addEventListener('scroll', verificarSeChegouNoTopo);
-
-    return () => {
-      window.removeEventListener('scroll', verificarSeChegouNoTopo);
-    };
-  }, [aoMudarVisibilidade]);
+  const espacadorRef = useProximidadeDoTopo(aoMudarVisibilidade);
 
   return (
     <>

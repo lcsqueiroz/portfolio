@@ -2,6 +2,7 @@
   position: relative;
   z-index: 2;
   background: var(--color-gh-bg);
+  box-shadow: 0 50px 90px -40px rgba(0, 0, 0, 0.3);
 }
 
 .grid {

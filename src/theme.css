@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --color-ink: #f3ece0;
   --color-void: #2c1559;

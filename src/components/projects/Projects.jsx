@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useProximidadeDoTopo from '../../hooks/useProximidadeDoTopo';
 import style from './Projects.module.css';
 
 const projetos = [
@@ -34,7 +35,8 @@ const projetos = [
   },
 ];
 
-function Projects() {
+function Projects({ aoMudarVisibilidade }) {
+  const secaoRef = useProximidadeDoTopo(aoMudarVisibilidade);
   const [indiceAtual, setIndiceAtual] = useState(0);
   const projeto = projetos[indiceAtual];
 
@@ -51,7 +53,7 @@ function Projects() {
   }
 
   return (
-    <section id="projetos" className={style.projetos}>
+    <section id="projetos" ref={secaoRef} className={style.projetos}>
       <div className={style.grid}>
         <h2 className={style.titulo}>Projetos</h2>
 

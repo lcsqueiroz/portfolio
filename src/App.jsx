@@ -7,6 +7,7 @@ import Contact from './components/contact/Contact';
 
 function App() {
   const [mostrarHeader, setMostrarHeader] = useState(false);
+  const [chegouEmProjetos, setChegouEmProjetos] = useState(false);
   const [chegouNoContato, setChegouNoContato] = useState(false);
 
   return (
@@ -14,8 +15,11 @@ function App() {
       <Header visivel={mostrarHeader && !chegouNoContato} />
       <Hero escondido={mostrarHeader} />
       <About aoMudarVisibilidade={setMostrarHeader} />
-      <Projects />
-      <Contact aoMudarVisibilidade={setChegouNoContato} podeAparecer={mostrarHeader} />
+      <Projects aoMudarVisibilidade={setChegouEmProjetos} />
+      <Contact
+        aoMudarVisibilidade={setChegouNoContato}
+        podeAparecer={chegouEmProjetos}
+      />
     </>
   );
 }

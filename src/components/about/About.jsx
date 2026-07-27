@@ -1,7 +1,5 @@
-import { useEffect, useRef } from 'react';
+import useProximidadeDoTopo from '../../hooks/useProximidadeDoTopo';
 import style from './About.module.css';
-
-const ANTECEDENCIA_EM_PIXELS = 150;
 
 const linhaDoTempo = [
   {
@@ -25,27 +23,7 @@ const linhaDoTempo = [
 ];
 
 function About({ aoMudarVisibilidade }) {
-  const secaoRef = useRef(null);
-
-  useEffect(() => {
-    function verificarSeChegouNoTopo() {
-      const posicaoDoTopo = secaoRef.current.getBoundingClientRect().top;
-
-      if (posicaoDoTopo <= ANTECEDENCIA_EM_PIXELS) {
-        aoMudarVisibilidade(true);
-      } else {
-        aoMudarVisibilidade(false);
-      }
-    }
-
-    verificarSeChegouNoTopo();
-
-    window.addEventListener('scroll', verificarSeChegouNoTopo);
-
-    return () => {
-      window.removeEventListener('scroll', verificarSeChegouNoTopo);
-    };
-  }, [aoMudarVisibilidade]);
+  const secaoRef = useProximidadeDoTopo(aoMudarVisibilidade);
 
   return (
     <section id="sobre" ref={secaoRef} className={style.sobre}>
