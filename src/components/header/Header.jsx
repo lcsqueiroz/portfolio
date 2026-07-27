@@ -10,8 +10,20 @@ function Header({ visivel }) {
       </nav>
 
       <div className={style.social}>
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
+        <a
+          href="https://linkedin.com/in/lcsqueiroz"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/lcsqueiroz"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
       </div>
     </header>
   );
