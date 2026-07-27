@@ -38,7 +38,7 @@ body {
 @media (max-width: 720px) {
   body {
     background-image: url('./assets/background-mobile.webp');
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-size: cover;
   }
 }
