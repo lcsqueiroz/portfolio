@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/header/Header';
 import Hero from './components/hero/Hero';
 import About from './components/about/About';
@@ -22,6 +23,7 @@ function App() {
           podeAparecer={chegouEmProjetos}
         />
       </main>
+      <Analytics />
     </>
   );
 }
