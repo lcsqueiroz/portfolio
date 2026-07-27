@@ -13,13 +13,15 @@ function App() {
   return (
     <>
       <Header visivel={mostrarHeader && !chegouNoContato} />
-      <Hero escondido={mostrarHeader} />
-      <About aoMudarVisibilidade={setMostrarHeader} />
-      <Projects aoMudarVisibilidade={setChegouEmProjetos} />
-      <Contact
-        aoMudarVisibilidade={setChegouNoContato}
-        podeAparecer={chegouEmProjetos}
-      />
+      <main>
+        <Hero escondido={mostrarHeader} />
+        <About aoMudarVisibilidade={setMostrarHeader} />
+        <Projects aoMudarVisibilidade={setChegouEmProjetos} />
+        <Contact
+          aoMudarVisibilidade={setChegouNoContato}
+          podeAparecer={chegouEmProjetos}
+        />
+      </main>
     </>
   );
 }
