@@ -9,18 +9,28 @@ export function useProximidadeDoTopo(
   const elementoRef = useRef(null);
 
   useEffect(() => {
+    let quadroJaAgendado = false;
+
     function verificarSeChegouNoTopo() {
       const posicaoDoTopo = elementoRef.current.getBoundingClientRect().top;
 
       aoMudarProximidade(posicaoDoTopo <= antecedenciaEmPixels);
+      quadroJaAgendado = false;
     }
 
-    verificarSeChegouNoTopo();
+    function aoRolar() {
+      if (quadroJaAgendado) return;
 
-    window.addEventListener('scroll', verificarSeChegouNoTopo);
+      quadroJaAgendado = true;
+      requestAnimationFrame(verificarSeChegouNoTopo);
+    }
+
+    aoRolar();
+
+    window.addEventListener('scroll', aoRolar, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', verificarSeChegouNoTopo);
+      window.removeEventListener('scroll', aoRolar);
     };
   }, [aoMudarProximidade, antecedenciaEmPixels]);
 
