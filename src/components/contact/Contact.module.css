@@ -100,6 +100,10 @@
 }
 
 @media (max-width: 720px) {
+  .grid {
+    padding: 4.5rem 1.25rem 5rem;
+  }
+
   .subtitulo {
     grid-column: 1 / -1;
   }
@@ -109,6 +113,6 @@
   }
 
   .label {
-    flex: 0 0 5.5rem;
+    flex: 0 0 4.6rem;
   }
 }

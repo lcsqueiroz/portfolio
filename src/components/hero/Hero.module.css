@@ -22,7 +22,7 @@
   margin-top: 1.5rem;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(3rem, 9vw, 6rem);
+  font-size: clamp(2.5rem, 11vw, 6rem);
   line-height: 0.95;
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -73,4 +73,16 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: rgba(243, 236, 224, 0.6);
+}
+
+@media (max-width: 720px) {
+  .hero {
+    top: 4rem;
+    padding: 0 1.25rem 3rem;
+  }
+
+  .stack {
+    gap: 1.4rem;
+    margin-top: 3rem;
+  }
 }

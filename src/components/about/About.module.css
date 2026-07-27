@@ -105,13 +105,18 @@
 }
 
 @media (max-width: 720px) {
+  .grid {
+    gap: 2.5rem 1.5rem;
+    padding: 4.5rem 1.25rem 5rem;
+  }
+
   .texto,
   .meta {
     grid-column: 1 / -1;
   }
 
   .meta {
-    padding-top: 1.5rem;
+    padding-top: 2rem;
     padding-left: 0;
     border-left: none;
     border-top: 1px solid var(--color-gh-border);
@@ -119,5 +124,6 @@
 
   .linhaDoTempo {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }

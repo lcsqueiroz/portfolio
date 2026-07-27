@@ -23,7 +23,7 @@ const linhaDoTempo = [
 ];
 
 function About({ aoMudarVisibilidade }) {
-  const secaoRef = useProximidadeDoTopo(aoMudarVisibilidade);
+  const secaoRef = useProximidadeDoTopo(aoMudarVisibilidade, 0);
 
   return (
     <section id="sobre" ref={secaoRef} className={style.sobre}>
