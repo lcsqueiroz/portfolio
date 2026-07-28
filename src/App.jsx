@@ -13,6 +13,7 @@ function App() {
 
   return (
     <>
+      <div className="backdrop" aria-hidden="true" />
       <Header visivel={mostrarHeader && !chegouNoContato} />
       <main>
         <Hero escondido={mostrarHeader} />
